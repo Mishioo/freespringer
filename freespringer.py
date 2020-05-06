@@ -52,7 +52,7 @@ prsr.add_argument(
          "Springer's terms of use. Proceed on your own responsibility."
 )
 prsr.add_argument(
-    '-d', '--destination', type=Path, metavar="PATH", default=Path()
+    '-d', '--destination', type=Path, metavar="PATH", default=Path(),
     help='Destination directory. Defaults to current working directory.'
 )
 prsr.add_argument(
