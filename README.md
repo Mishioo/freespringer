@@ -1,7 +1,9 @@
 # freespringer
 At once download multiple books given by Springer for free.
 
-As was reported [here](https://www.springernature.com/gp/librarians/news-events/all-news-articles/industry-news-initiatives/free-access-to-textbooks-for-institutions-affected-by-coronaviru/17855960?fbclid=IwAR1RAVizgXrCAoOY8YV8VFEZXom8wgbDxAqak01MxbkPW-x5wranUPGKWUQ)
+As was reported [here](
+https://www.springernature.com/gp/librarians/news-events/all-news-articles/industry-news-initiatives/free-access-to-textbooks-for-institutions-affected-by-coronaviru/17855960
+)
 Springer have opened access to a number of essential textbooks from all disciplines (over 300 in english) in aid to support learning and teaching at higher education institutions worldwide during Coronavirus pandemic.
 The list of books, however, is available in a form not very convinient to browse (xlsx file), and downloading multiple files is quite cumbersome.
 Therefore I decided to write this small Python script to help me browse and download these files.

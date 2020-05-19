@@ -128,7 +128,7 @@ def setup_globals(force_download):
 def _download_books_list():
     """Get list of free springer books from web."""
     logger.debug("Fetching list of books from Springer site.")
-    link = "https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v5"
+    link = "https://resource-cms.springernature.com/springer-cms/rest/v1/content/17858272/data/v6"
     resp = requests.get(link, stream=True)
     logger.debug(f"Response status code: {resp.status_code}.")
     if not resp.status_code == 200:
