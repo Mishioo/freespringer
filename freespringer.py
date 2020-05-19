@@ -151,11 +151,11 @@ def get_raw_list_of_books(force_download):
     with TMPFILE.open("rb") as handle:
         wb = openpyxl.load_workbook(handle)
         sheet = wb.active
-        titles = (c.value for c in sheet['A'])
-        packages = (c.value for c in sheet['L'])
-        subjects = (c.value for c in sheet['T'])
-        doinrs = (c.value.strip("http://doi.org/") for c in sheet['R'])
-        iterator = zip(titles, packages, subjects, doinrs)
+        iterator = (
+        #    titles, packages, subjects, doinrs
+            (row[0], row[11], row[19], row[17].strip("http://doi.org/"))
+            for row in sheet.values if row[17]
+        )
         headers = next(iterator)
         books = list(iterator)
     logger.info("List of free Springer books loaded.")
@@ -169,7 +169,7 @@ def print_available_topics():
 
 def print_available_packages():
     print("\nList of available packages:\n")
-    print(f" ID   {'PACKAGE NAME': <{LONGEST}}   BOOKS")
+    print(f"   ID   {'PACKAGE NAME': <{LONGEST}}   BOOKS")
     print('   ' + "-" * (13 + LONGEST))
     for pckg, idx in IDS_OF_PACKAGES.items():
         print(f"{idx: >5}   {pckg: <{LONGEST}}   {len(TOPICS_BOOKS[idx]): >5}")
